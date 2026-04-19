@@ -1,3 +1,6 @@
+import os
+from dotenv import load_dotenv
+load_dotenv()
 import requests
 import re
 import json
@@ -10,16 +13,16 @@ import threading
 from groq import Groq
 from google import genai
 
-TELEGRAM_TOKEN = "8687415968:AAFtvdYKVgqWwmY0HNbc6_WCLpSfTHZ8uvU"
-CHAT_ID = "8529427533"
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+CHAT_ID = os.getenv("CHAT_ID")
 KST = ZoneInfo("Asia/Seoul")
 
-KIS_APP_KEY = "PSKNO82FXZvlQPvYxUCEJqskgun77KkEnBm1"
-KIS_SECRET  = "rvSfXqgJOUdsUQHIrbU+Fug8jsyJgK7Q+IEgCBVrsVbed9e7npMYg46FDx7agDJakoIAozLwArVLz4mG8QHNs0RIZzpkVVhyqJxL71NWDxKEonWSrEyKnmWqyW4AzqEhd+wq4t0ks/oy1LIsF6SuvrkqsWUO2VUKav8DqQDpuUKUo9WZsx8="
-KIS_ACCOUNT = "73921841"
+KIS_APP_KEY = os.getenv("KIS_APP_KEY")
+KIS_SECRET = os.getenv("KIS_SECRET")
+KIS_ACCOUNT = os.getenv("KIS_ACCOUNT")
 KIS_BASE    = "https://openapi.koreainvestment.com:9443"
-GROQ_API_KEY   = "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"
-GEMINI_API_KEY = "AIzaSyCdFBCjUhipN9FS_4tixpuW3bedW-5Gqm4"
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 HELP_MSG = """🤖 주식 분석 봇 사용법
 
