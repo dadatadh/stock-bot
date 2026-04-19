@@ -1,0 +1,5 @@
+pykrx
+requests
+pandas
+groq
+google-genai
